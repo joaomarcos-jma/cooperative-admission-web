@@ -1,6 +1,14 @@
-<mat-drawer-container>
-  <mat-drawer mode="side" opened> </mat-drawer>
-  <mat-drawer-content>
+<div class="app-main">
+  <mat-drawer-container class="sidenav-container">
+    <mat-drawer mode="side" opened>
+      <div class="sidebar-header">
+        <div>
+          <img src="../assets/images/logos/ailos-logo.png" alt="Logo" />
+        </div>
+      </div>
+      <app-base-menu></app-base-menu>
+    </mat-drawer>
+    <app-base-header></app-base-header>
     <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-drawer-container>
+</div>

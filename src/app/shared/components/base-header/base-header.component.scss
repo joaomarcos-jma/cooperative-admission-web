@@ -1,0 +1,32 @@
+@import "../../../../styles.scss";
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: map-get($base, '50');
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mat-button,
+.mat-stroked-button {
+  border-radius: 12px;
+  margin: 4px 4px;
+}
+
+.avatar-image {
+  background-image: url('../../../../assets/images/logos/person-logo.png');
+  background-size: cover;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+mat-icon.mat-card-avatar {
+  font-size: 40px;
+}
