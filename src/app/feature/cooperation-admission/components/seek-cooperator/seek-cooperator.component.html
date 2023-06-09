@@ -17,7 +17,9 @@
           [textMask]="{ mask: maskCpf }"
           [appUnmask]="unmask"
         />
-        <mat-hint>A Lista dos CPFs válidos aceitos estão no arquivo README</mat-hint>
+        <mat-hint
+          >A Lista dos CPFs válidos aceitos estão no arquivo README</mat-hint
+        >
         <mat-error *ngIf="cpfFormControl.invalid">{{
           getErrorMessage()
         }}</mat-error>
@@ -27,6 +29,7 @@
           [disabled]="cpfFormControl.invalid"
           mat-raised-button
           color="primary"
+          (click)="getMember()"
         >
           Consultar por CPF
         </button>
