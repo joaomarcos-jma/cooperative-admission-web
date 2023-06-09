@@ -6,6 +6,7 @@ import {
 } from 'src/app/shared/constants/mask.constant';
 import cpfValidator from 'src/app/shared/validators/cpf.validator';
 import { MembersService } from '../../services/members.service';
+import { Members } from '../../models/members';
 
 @Component({
   selector: 'app-seek-cooperator',
@@ -16,6 +17,7 @@ export class SeekCooperatorComponent implements OnInit {
   cpfFormControl = new FormControl('', [Validators.required, cpfValidator]);
   maskCpf = MASK_CPF;
   unmask = UNMASK_NUMBER;
+  memberData: Members = null;
 
   constructor(private memberService: MembersService) {}
 
@@ -35,7 +37,7 @@ export class SeekCooperatorComponent implements OnInit {
     this.memberService
       .getMemberByCpf(this.cpfFormControl.value)
       .subscribe((member) => {
-        console.log('member: ' + member);
+        member.length ? (this.memberData = member[0]) : null;
       });
   }
 }

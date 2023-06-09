@@ -6,8 +6,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { UnmaskDirective } from '../directives/unmask.directive';
+import { MatListModule } from '@angular/material/list';
 import { TextMaskModule } from 'angular2-text-mask';
+import { UnmaskDirective } from '../directives/unmask.directive';
 
 @NgModule({
   declarations: [UnmaskDirective],
@@ -22,6 +23,7 @@ import { TextMaskModule } from 'angular2-text-mask';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatListModule,
   ],
 })
 export class FormModule {}
