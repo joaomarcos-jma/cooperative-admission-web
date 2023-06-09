@@ -1,5 +1,3 @@
-@import '../../../../../styles.scss';
-
 .container {
   display: flex;
   justify-content: flex-start;
@@ -40,9 +38,9 @@
 }
 
 .isActive {
-  color: mat-color($success);
+  color: var(--success);
 }
 
 .isInactive {
-  color: mat-color($warn);
+  color: var(--warn);
 }

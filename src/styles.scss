@@ -1,7 +1,6 @@
 @import '~@angular/material/theming';
 @include mat-core();
 @import 'theme/palette-color-gen';
-@import 'theme/mixins-layout';
 
 $primary-color: #025E73;
 $accent-color: #D98218;
@@ -9,17 +8,36 @@ $accent-color: #D98218;
 $primary-palette: createPalette($primary-color);
 $accent-palette: createPalette($accent-color);
 
-$warn: mat-palette($mat-red);
-$primary: mat-palette($primary-palette);
-$accent: mat-palette($accent-palette);
-$success: mat-palette($mat-green);
-$base: mat-palette($mat-gray);
+$current-warn: mat-palette($mat-red);
+$current-primary: mat-palette($primary-palette);
+$current-accent: mat-palette($accent-palette);
+$current-success: mat-palette($mat-green);
+$current-base: mat-palette($mat-gray);
 
 // Pick one
-// $theme: mat-dark-theme($primary, $accent, $warn);
-$theme: mat-light-theme($primary, $accent, $warn);
+// $theme: mat-dark-theme($current-primary, $current-accent, $current-warn);
+$theme: mat-light-theme($current-primary, $current-accent, $current-warn);
 
-@include angular-material-theme($theme);
+:root {
+  @include angular-material-theme($theme);
+  $primary: mat-color($current-primary);
+  $accent: mat-color($current-accent);
+  $warn: mat-color($current-warn);
+  $success: mat-color($current-success);
+  $base: map-get($current-primary, 50);
+  $fg_palette: map-get($theme, foreground);
+  $bg_palette: map-get($theme, background);
+  $fg: map-get($fg_palette, text);
+  $bg: map-get($bg_palette, background);
+
+  --primary: #{$primary};
+  --accent: #{$accent};
+  --warn: #{$warn};
+  --fg: #{$fg};
+  --bg: #{$bg};
+  --success: #{$success};
+  --base: #{$base};
+}
 
 html,
 body {
@@ -32,5 +50,5 @@ body {
 }
 
 mat-drawer-content {
-  background-color: map-get($primary, '700');
+  background-color: var(--base)
 }

@@ -1,11 +1,9 @@
-@import "../../../../styles.scss";
-
 .spacer {
   flex: 1 1 auto;
 }
 
 .mat-toolbar {
-  background-color: map-get($base, '50');
+  background-color: var(--bg);
 }
 
 .title {
