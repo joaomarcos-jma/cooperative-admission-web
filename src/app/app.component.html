@@ -10,6 +10,7 @@
     </mat-drawer>
     <app-base-header></app-base-header>
     <div class="content">
+      <app-global-loader [isLoading]="isLoading"></app-global-loader>
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-container>
