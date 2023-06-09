@@ -12,7 +12,7 @@ export class MembersService {
 
   getMemberByCpf(cpf: string): Observable<Members[]> {
     return this.http.get<Members[]>(
-      `${environment().baseUrl}/users?document=${cpf}`
+      `${environment.baseUrl}/users?document=${cpf}`
     );
   }
 }
