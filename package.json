@@ -9,7 +9,6 @@
     "ng": "ng",
     "dev": "ng serve",
     "start": "node server.js",
-    "prebuild": "parbake src/assets/.env PRODUCTION,API_BASE_URL",
     "build": "ng build",
     "postinstall": "ng build --aot --prod",
     "test": "ng test",
