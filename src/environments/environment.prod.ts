@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: process.env['NG_APP_BASE_URL']
+  baseUrl: process.env['API_BASE_URL']
 };
