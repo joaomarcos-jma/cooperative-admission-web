@@ -7,8 +7,10 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "dev": "ng serve",
+    "start": "node server.js",
+    "postinstall": "ng build --aot --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,6 +29,7 @@
     "@angular/router": "~9.1.13",
     "@elemental-concept/env-bakery": "0.0.5",
     "angular2-text-mask": "^9.0.0",
+    "express": "^4.18.2",
     "rxjs": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
