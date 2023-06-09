@@ -8,11 +8,17 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Valid Cpf for Testing
 
-60512552061 inativo
-48673540070 ativo
-59061748003 inativo
-68441336008 ativo
-20009456007 ativo
+| CPF                | STATUS         |
+| ------------------ | -------------- |
+| 60512552061        |    inactive    |
+| 48673540070        |     active     |
+| 59061748003        |    inactive    |
+| 68441336008        |     active     |
+| 20009456007        |     active     |
+
+## Application
+- 🛠 **Application Running in [LIVE_EXAMPLE](https://cooperative-admission-web.herokuapp.com)**
+
 
 ## Code scaffolding
 
