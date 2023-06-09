@@ -25,7 +25,7 @@
     "@angular/platform-browser": "~9.1.13",
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
-    "@ngx-env/builder": "^16.1.2",
+    "@elemental-concept/env-bakery": "0.0.5",
     "angular2-text-mask": "^9.0.0",
     "rxjs": "^6.5.3",
     "tslib": "^1.10.0",

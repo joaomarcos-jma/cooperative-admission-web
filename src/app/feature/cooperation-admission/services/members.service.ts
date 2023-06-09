@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Members } from '../models/members';
@@ -12,7 +12,7 @@ export class MembersService {
 
   getMemberByCpf(cpf: string): Observable<Members[]> {
     return this.http.get<Members[]>(
-      `${environment.baseUrl}/users?document=${cpf}`
+      `${environment().baseUrl}/users?document=${cpf}`
     );
   }
 }

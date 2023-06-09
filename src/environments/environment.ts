@@ -1,11 +1,13 @@
+import { getEnv } from '@elemental-concept/env-bakery';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false,
-  baseUrl: process.env['NG_APP_BASE_URL']
-};
+export const environment = () => ({
+  production: getEnv('PRODUCTION').boolean(),
+  baseUrl: getEnv('API_BASE_URL').string(),
+});
 
 /*
  * For easier debugging in development mode, you can import the following file
