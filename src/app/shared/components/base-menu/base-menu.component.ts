@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 export interface NavRoutes {
   path: string;
@@ -14,11 +13,11 @@ export interface NavRoutes {
 export class BaseMenuComponent implements OnInit {
   navRoutes: NavRoutes[] = [
     {
-      path: '/',
+      path: '/home',
       icon: 'menu',
     },
     {
-      path: '/cooperative',
+      path: '/cooperation-admission',
       icon: 'search',
     },
     {
@@ -39,11 +38,7 @@ export class BaseMenuComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  navigateTo(route: string) {
-    this.router.navigateByUrl(route);
-  }
 }
