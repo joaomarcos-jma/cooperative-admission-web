@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { HttpErrorInterceptor } from './http-error.interceptor';
+import { HttpLoaderInterceptor } from './http-loader.interceptor';
 
 @NgModule({
   imports: [CommonModule],
@@ -11,6 +12,11 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
       useClass: HttpErrorInterceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpLoaderInterceptor,
+      multi: true,
+    },
   ],
 })
-export class ErrorHandlerModule {}
+export class InterceptorHandlerModule {}

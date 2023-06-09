@@ -4,8 +4,13 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { BaseHeaderComponent } from './components/base-header/base-header.component';
 import { BaseMenuComponent } from './components/base-menu/base-menu.component';
+import { GlobalLoaderComponent } from './components/global-loader/global-loader.component';
 
-const DECLARATIONS = [BaseHeaderComponent, BaseMenuComponent];
+const DECLARATIONS = [
+  BaseHeaderComponent,
+  BaseMenuComponent,
+  GlobalLoaderComponent,
+];
 const MODULES = [MaterialModule, RouterModule];
 
 @NgModule({
