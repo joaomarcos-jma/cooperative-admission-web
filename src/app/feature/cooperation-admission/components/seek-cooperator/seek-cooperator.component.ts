@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import {
+  MASK_CPF,
+  UNMASK_NUMBER,
+} from 'src/app/feature/shared/constants/mask.constant';
+import cpfValidator from 'src/app/feature/shared/validators/cpf.validator';
 
 @Component({
   selector: 'app-seek-cooperator',
@@ -7,7 +12,9 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./seek-cooperator.component.scss'],
 })
 export class SeekCooperatorComponent implements OnInit {
-  cpfFormControl = new FormControl('', [Validators.required]);
+  cpfFormControl = new FormControl('', [Validators.required, cpfValidator]);
+  maskCpf = MASK_CPF;
+  unmask = UNMASK_NUMBER;
 
   constructor() {}
 
@@ -18,6 +25,8 @@ export class SeekCooperatorComponent implements OnInit {
       return 'Por favor informe o CPF!';
     }
 
-    return  '';
+    return this.cpfFormControl.hasError('cpfNotValid')
+      ? 'O CPF informado é inválido!'
+      : '';
   }
 }

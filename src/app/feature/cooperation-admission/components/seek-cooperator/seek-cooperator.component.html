@@ -11,13 +11,25 @@
     <form class="coop-form">
       <mat-form-field>
         <mat-label>CPF</mat-label>
-        <input matInput [formControl]="cpfFormControl" />
+        <input
+          matInput
+          [formControl]="cpfFormControl"
+          [textMask]="{ mask: maskCpf }"
+          [appUnmask]="unmask"
+        />
+        <mat-hint>A Lista dos CPFs válidos aceitos estão no arquivo README</mat-hint>
         <mat-error *ngIf="cpfFormControl.invalid">{{
           getErrorMessage()
         }}</mat-error>
       </mat-form-field>
       <mat-card-actions class="coop-form__actionFind">
-        <button [disabled]="cpfFormControl.invalid" mat-raised-button color="primary">Consultar por CPF</button>
+        <button
+          [disabled]="cpfFormControl.invalid"
+          mat-raised-button
+          color="primary"
+        >
+          Consultar por CPF
+        </button>
       </mat-card-actions>
     </form>
   </mat-card-content>
