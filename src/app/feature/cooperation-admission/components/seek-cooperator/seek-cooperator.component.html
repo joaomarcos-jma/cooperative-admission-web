@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="container">
   <mat-card-header>
     <mat-card-title>Informe o CPF do futuro cooperado(a)</mat-card-title>
     <mat-card-subtitle
@@ -7,7 +7,7 @@
       pontos ou traços).</mat-card-subtitle
     >
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="card-content">
     <form class="coop-form">
       <mat-form-field>
         <mat-label>CPF</mat-label>
@@ -35,6 +35,74 @@
         </button>
       </mat-card-actions>
     </form>
+    <div *ngIf="memberData" class="content-member">
+      <mat-card class="card-situation">
+        <mat-card-header>
+          <mat-card-title>Situação cadastral do CPF</mat-card-title>
+          <mat-card-subtitle>Consulta na Receita Federal</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>person</mat-icon>
+              <div class="subtitle-1" mat-line>
+                <strong>Nome</strong>
+              </div>
+              <div mat-line>
+                {{ memberData.first_name }} {{ memberData.last_name }}
+              </div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon
+                [ngClass]="memberData.status ? 'isActive' : 'isInactive'"
+                mat-list-icon
+                >{{ memberData.status ? "check" : "cancel" }}</mat-icon
+              >
+              <div class="subtitle-1" mat-line>
+                <strong>Situação do CPF</strong>
+              </div>
+              <div mat-line>
+                {{ memberData.status | displayStatus }}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="card-situation">
+        <mat-card-header>
+          <mat-card-title>Conta Aplicação</mat-card-title>
+          <mat-card-subtitle>Cooperativa Viacred</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>credit_card</mat-icon>
+              <h4 mat-line><strong>Número da conta</strong></h4>
+              <div mat-line>
+                {{ memberData.nr_account }}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="card-situation">
+        <mat-card-header>
+          <mat-card-title>Conta Corrente</mat-card-title>
+          <mat-card-subtitle>Cooperativa Viacred</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>credit_card</mat-icon>
+              <h4 mat-line><strong>Número da conta</strong></h4>
+              <div mat-line>
+                {{ memberData.nr_account }}
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Iniciar nova admissão</button>

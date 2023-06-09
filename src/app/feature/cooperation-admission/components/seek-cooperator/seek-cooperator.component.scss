@@ -1,11 +1,13 @@
-.mat-card {
+@import '../../../../../styles.scss';
+
+.container {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.mat-card-content {
+.card-content {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -23,4 +25,24 @@
   &__actionFind {
     margin-left: 25px;
   }
+}
+
+.card-situation {
+  width: 280px;
+  margin: 25px;
+}
+
+.content-member {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.isActive {
+  color: mat-color($success);
+}
+
+.isInactive {
+  color: mat-color($warn);
 }
