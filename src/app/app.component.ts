@@ -7,7 +7,6 @@ import { LoaderService } from './shared/services/loader.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'cooperative-admission-web';
   isLoading: boolean;
 
   constructor(private loaderService: LoaderService) {
